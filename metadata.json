@@ -1,0 +1,10 @@
+{
+  "name": "Remix Remix: Sião Barber Club Premium 2.0",
+  "description": "Barbearia Premium com tradição e modernidade. Planos de corte ilimitado, academia profissional e estética masculina de alto padrão.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

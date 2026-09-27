@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --page-bg: #f0f0f0;
+  --ink-main: #5e6470;
+  --accent-deep: rgba(30, 50, 90, 0.9);
+  --accent-soft: rgba(30, 50, 90, 0.8);
+  --border-soft: rgba(255, 255, 255, 0.2);
+  --font-helvetica: Helvetica, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--page-bg);
+  color: var(--ink-main);
+  font-family: var(--font-helvetica);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, a {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+video, img {
+  display: block;
+}
+
+/* Reveal animations */
+.animate-on-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 800ms cubic-bezier(.2,.75,.25,1), transform 800ms cubic-bezier(.2,.75,.25,1);
+}
+.animate-on-load.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(44px) scale(0.985);
+  filter: blur(12px);
+  transition: opacity 750ms cubic-bezier(.2,.75,.25,1), transform 750ms cubic-bezier(.2,.75,.25,1), filter 800ms cubic-bezier(.2,.75,.25,1);
+}
+.animate-on-scroll.scroll-from-left {
+  transform: translateX(-52px) translateY(20px) scale(0.985);
+}
+.animate-on-scroll.scroll-from-right {
+  transform: translateX(52px) translateY(20px) scale(0.985);
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-load,
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
